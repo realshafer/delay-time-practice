@@ -1,4 +1,4 @@
-let sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8;
+let sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9, sound10, sound11, sound12;
 let original1;
 let questionButton, original1Button, answerButton, nextButton;
 let player, fileName;
@@ -6,13 +6,18 @@ let answerRevealed = false;
 
 function preload() {
   // Question pool
-  sound1 = loadSound('assets/104.mp3');
-  sound2 = loadSound('assets/112.mp3');
-  sound3 = loadSound('assets/120.mp3');
-  sound4 = loadSound('assets/128.mp3');
-  sound5 = loadSound('assets/136.mp3');
-  sound6 = loadSound('assets/144.mp3');
-  sound7 = loadSound('assets/152.mp3');
+  sound1 = loadSound('assets/Drums - 10ms.mp3');
+  sound2 = loadSound('assets/Drums - 25ms.mp3');
+  sound3 = loadSound('assets/Drums - 50ms.mp3');
+  sound4 = loadSound('assets/Drums - 100ms.mp3');
+  sound5 = loadSound('assets/Drums - 250ms.mp3');
+  sound6 = loadSound('assets/Drums - 500ms.mp3');
+  sound7 = loadSound('assets/Woodblock - 10ms.mp3');
+  sound8 = loadSound('assets/Woodblock - 25ms.mp3');
+  sound9 = loadSound('assets/Woodblock - 50ms.mp3');
+  sound10 = loadSound('assets/Woodblock - 100ms.mp3');
+  sound11 = loadSound('assets/Woodblock - 250ms.mp3');
+  sound12 = loadSound('assets/Woodblock - 500ms.mp3');
   // Originals
   original1 = loadSound('assets/120-click.mp3');
 }
@@ -25,11 +30,11 @@ function setup(){
 
   // Title
   textSize(36);
-  text("Tempo ID Practice", width/2, height/9);
+  text("Delay Time Practice", width/2, height/9);
 
   // Subtitle
   textSize(20);
-  text("BPM = 104, 112, 120, 128, 136, 144, 152", width/2, height/9 + 40);
+  text("10ms, 25ms, 50ms, 100ms, 250ms, 500ms", width/2, height/9 + 40);
 
   // --- Layout variables ---
   let rowH = 60;
@@ -46,7 +51,7 @@ function setup(){
   questionButton.mousePressed(toggleQuestion);
 
   // ORIGINAL 1 row
-  createDiv("BPM = 120")
+  createDiv("500ms")
     .position(col1X - 150, startY + rowH)
     .style("color","white").style("font-size","24px");
   original1Button = createButton("PLAY");
@@ -138,17 +143,22 @@ let secondLastChoice = -1;
 function chooseSound() {
   let choice;
   do {
-    choice = int(random(7));
+    choice = int(random(12));
   } while (choice === lastChoice && choice === secondLastChoice);
 
   secondLastChoice = lastChoice;
   lastChoice = choice;
 
-  if (choice === 0) { player = sound1; fileName = "BPM = 104"; }
-  else if (choice === 1) { player = sound2; fileName = "BPM = 112"; }
-  else if (choice === 2) { player = sound3; fileName = "BPM = 120"; }
-  else if (choice === 3) { player = sound4; fileName = "BPM = 128"; }
-  else if (choice === 4) { player = sound5; fileName = "BPM = 136"; }
-  else if (choice === 5) { player = sound6; fileName = "BPM = 144"; }
-  else { player = sound7; fileName = "BPM = 152"; }
+  if (choice === 0) { player = sound1; fileName = "10ms"; }
+  else if (choice === 1) { player = sound2; fileName = "25ms"; }
+  else if (choice === 2) { player = sound3; fileName = "50ms"; }
+  else if (choice === 3) { player = sound4; fileName = "100ms"; }
+  else if (choice === 4) { player = sound5; fileName = "250ms"; }
+  else if (choice === 5) { player = sound6; fileName = "500ms"; }
+  else if (choice === 6) { player = sound2; fileName = "10ms"; }
+  else if (choice === 7) { player = sound2; fileName = "25ms"; }
+  else if (choice === 8) { player = sound3; fileName = "50ms"; }
+  else if (choice === 9) { player = sound4; fileName = "100ms"; }
+  else if (choice === 10) { player = sound5; fileName = "250ms"; }
+  else { player = sound7; fileName = "500ms"; }
 }
