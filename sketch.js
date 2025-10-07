@@ -155,10 +155,10 @@ function chooseSound() {
   else if (choice === 3) { player = sound4; fileName = "100ms"; }
   else if (choice === 4) { player = sound5; fileName = "250ms"; }
   else if (choice === 5) { player = sound6; fileName = "500ms"; }
-  else if (choice === 6) { player = sound2; fileName = "10ms"; }
-  else if (choice === 7) { player = sound2; fileName = "25ms"; }
-  else if (choice === 8) { player = sound3; fileName = "50ms"; }
-  else if (choice === 9) { player = sound4; fileName = "100ms"; }
-  else if (choice === 10) { player = sound5; fileName = "250ms"; }
-  else { player = sound7; fileName = "500ms"; }
+  else if (choice === 6) { player = sound7; fileName = "10ms"; }
+  else if (choice === 7) { player = sound8; fileName = "25ms"; }
+  else if (choice === 8) { player = sound9; fileName = "50ms"; }
+  else if (choice === 9) { player = sound10; fileName = "100ms"; }
+  else if (choice === 10) { player = sound11; fileName = "250ms"; }
+  else { player = sound12; fileName = "500ms"; }
 }
